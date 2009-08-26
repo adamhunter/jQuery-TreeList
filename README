@@ -34,3 +34,9 @@ The list will also hide any sub menu that doesn't belong to an li with the class
 
 Example:
 $('#nav').treelist()
+
+Accepted options
+expander
+  sets the selector for the clickable expander
+speed
+  the speed at which the slide up/down animation should run
