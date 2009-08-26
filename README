@@ -6,12 +6,12 @@ example html
 
 <ul>
   <li>List Item 1</li>
-  <li>
+  <li class="open"><!-- will stay open -->
     <span class="expander"></span>
     List Item 2
     <ul>
       <li>Sub List Item 1</li>
-      <li>
+      <li><!-- will close if js is available -->
         <span class="expander"></span>
         Sub List Item 2
         <ul>
@@ -29,6 +29,8 @@ example html
 The span.expander can be any element with any class.  It does however need to be inside the <li> that contains the nested <ul>
 
 To kick off the treelist, just use $('#nav').treelist() with the selector being the outermost <ul> element. To change the "expander" class, just use $('#nav').treelist({expander : '.some-other-class'}); (notice it's a full selector, including the .)
+
+The list will also hide any sub menu that doesn't belong to an li with the class of open.  This is done via javascript so that it degrades nicely.  
 
 Example:
 $('#nav').treelist()
