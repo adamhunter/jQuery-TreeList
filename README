@@ -1,0 +1,34 @@
+This is a super simple jQuery treelist.  It supports an infinite depth of nested lists.  
+The first version currently only supports using `<ul>`, varying html support to be added in the future
+*cough cough* feel free to fork it.
+
+example html
+`
+<ul>
+  <li>List Item 1</li>
+  <li>
+    <span class="expander"></span>
+    List Item 2
+    <ul>
+      <li>Sub List Item 1</li>
+      <li>
+        <span class="expander"></span>
+        Sub List Item 2
+        <ul>
+          <li>Deep List Item 1</li>
+          <li>Deep List Item 2</li>
+        </ul>
+      </li>
+      <li>Sub List Item 3</li>
+    </ul>
+  </li>
+  <li>List Item 3</li>
+</ul>
+`
+
+The `span.expander` can be any element with any class.  It does however need to be inside the `<li>` that contains the nested `<ul>`
+
+To kick off the treelist, just use `$('#nav').treelist()` with the selector being the outermost `<ul>` element. To change the "expander" class, just use `$('#nav').treelist({expander : '.some-other-class'});` (notice it's a full selector, including the .)
+
+Example:
+`$('#nav').treelist()`
