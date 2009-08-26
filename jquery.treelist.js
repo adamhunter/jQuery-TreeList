@@ -1,5 +1,5 @@
 tl = {
-  opts : {'expander' : '.expander'},
+  opts : {'expander' : '.expander', 'speed' : 'dev'},
   
   treelist : function(opts) {
     tl.setup(opts);
@@ -12,11 +12,11 @@ tl = {
     var $li = jQuery(this).closest('li');
     var $li_ul = jQuery('ul:first', $li)
     if ($li.hasClass('open')) {
-      $li_ul.slideUp('fast');
+      $li_ul.slideUp(tl.opts.speed);
       $li.removeClass('open');
     } else {
       $li.addClass('open');
-      $li_ul.slideDown('fast');
+      $li_ul.slideDown(tl.opts.speed);
     }
     return false;
   },
