@@ -9,20 +9,13 @@ tl = {
   _expand : function() {
     var $li = jQuery(this).closest('li');
     var $li_ul = jQuery('ul:first', $li)
-    if ($li.hasClass('open')) {
-      $li_ul.slideUp(tl.opts.speed);
-      $li.removeClass('open');
-    } else {
-      $li.addClass('open');
-      $li_ul.slideDown(tl.opts.speed);
-    }
+		$li_ul.slideToggle(tl.opts.speed)
+		$li.toggleClass('open');
     return false;
   },
   _setup : function(opts) {
     if (typeof opts == 'undefined') { return; }
-    for (prop in opts) { 
-       tl.opts[prop] = opts[prop];
-    }
+    for (prop in opts) { tl.opts[prop] = opts[prop]; }
   }
 }
 jQuery.fn.extend(tl);
