@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <title>jQuery Tree Expander</title>
+  <script src="http://code.jquery.com/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="jquery.treelist.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function(){
+      $('#nav').treelist({
+         speed: 'fast'
+       });
+     });    
+  </script>
+  
+  <style type="text/css" media="screen">
+    ul#nav li span.expander { display: block; float: left; width: 15px; height: 15px; background: red;}
+    ul#nav li.open span.expander { background: green; }
+  </style>
+  </head>
+  <body>
+    <ul id="nav">
+      <li>List Item 1</li>
+      <li class="open"><!-- will stay open -->
+        <span class="expander"></span>
+        List Item 2
+        <ul>
+          <li>Sub List Item 1</li>
+          <li><!-- will close if js is available -->
+            <span class="expander"></span>
+            Sub List Item 2
+            <ul>
+              <li>Deep List Item 1</li>
+              <li>Deep List Item 2</li>
+            </ul>
+          </li>
+          <li>Sub List Item 3</li>
+        </ul>
+      </li>
+      <li>List Item 3</li>
+    </ul>    
+  </body>
+</html>

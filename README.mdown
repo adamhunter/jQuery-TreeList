@@ -1,0 +1,34 @@
+## TreeList for jQuery 
+
+This is a super simple jQuery treelist.  It supports an infinite depth of nested lists.  
+The first version currently only supports using `<ul>`, varying html support to be added in the future
+*cough cough* feel free to fork it.
+
+The span.expander can be any element with any class.  It does however need to be inside the `<li>` that contains the nested `<ul>`
+
+To kick off the treelist, just use `$('#nav').treelist()` with the selector being the outermost `<ul>` element. To change the "expander" class, just use 
+  
+The list will also hide any sub menu that doesn't belong to an li with the class of open.  This is done via javascript so that it degrades nicely.  
+
+## Example:
+To run it, use as follows. This will look for an element with an id "nav"..
+Check out the example.html file for more info
+
+    $(document).ready(function(){
+      $('#nav').treelist();
+    });
+
+### Accepted options
+expander: sets the selector for the clickable expander
+(notice it's a full selector, including the .)
+
+    $('#nav').treelist({
+      expander: '.some-other-class'
+    });
+
+speed: the speed at which the slide up/down animation should run. 
+These are jquery speed options for toggle(). so 'slow', 'fast', etc.
+
+    $('#nav').treelist({
+      speed: 'slow'
+    });
